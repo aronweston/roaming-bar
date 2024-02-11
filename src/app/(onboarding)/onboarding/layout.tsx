@@ -1,19 +1,12 @@
 import "@/assets/styles/globals.css";
-
 import Footer from "@/components/layout/Footer";
 import OnboardingNav from "@/components/layout/OnboardingNav";
 import AgeVerificationModal from "@/components/util/AgeVerificationModal";
 import { cn } from "@/lib/utils";
 import { OnboardingProvider } from "@/providers/OnboardingProvider";
-import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 
 const inter = Inter({ subsets: ["latin"] });
-
-export const metadata: Metadata = {
-  title: "Roaming Bar | Let The Good Times Roam",
-  description: "",
-};
 
 export default function OnboardingLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (

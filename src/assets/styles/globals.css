@@ -4,9 +4,15 @@
 
 @layer base {
   :root {
+    /* light beige */
     --background: #f9f6f1;
     --foreground: #2f2427;
 
+    /* beige */
+    --background-secondary: #f3eee2;
+    --background-secondary-foreground: #2f2427;
+
+    /* dark grey */
     --primary: #2f2427;
     --primary-foreground: #f3eee2;
 
@@ -14,11 +20,12 @@
     --secondary: #1a412e;
     --secondary-foreground: #f3eee2;
 
+    /* lime green */
+    --accent: #d0e37f;
+    --accent-foreground: #2f2427;
+
     --muted: rgba(28, 28, 28, 0.3);
     --muted-foreground: rgba(28, 28, 28, 0.6);
-
-    --accent: #d6cd72;
-    --accent-foreground: #2f2427;
 
     --card: 0 0% 100%;
     --card-foreground: 222.2 84% 4.9%;

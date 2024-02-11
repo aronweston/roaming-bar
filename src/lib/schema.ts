@@ -1,14 +1,17 @@
-import { date, literal, number, object, string, union, z } from "zod";
+import { boolean, date, literal, number, object, string, union, z } from "zod";
 
 export type NewsletterSchema = z.input<typeof NewsletterSchema>;
 export const NewsletterSchema = object({ firstName: string(), email: string().email() });
 
+const requiredMessage = "But, we really need this!";
+
 //Onboarding
 export type CustomerSchema = z.input<typeof CustomerSchema>;
 export const CustomerSchema = object({
-  fullName: string().min(2),
-  phone: string().min(2),
-  email: string().email(),
+  fullName: string({ required_error: requiredMessage }).min(2),
+  phone: string({ required_error: requiredMessage }).min(2),
+  email: string({ required_error: requiredMessage }).email(),
+  accepts_marketing: boolean().optional(),
 });
 
 export type EventSchema = z.input<typeof EventSchema>;

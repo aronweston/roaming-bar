@@ -7,7 +7,7 @@ import { Routes } from "@/lib/cms";
 
 export default function Footer() {
   return (
-    <footer className="v-stack border border-t-primary overflow-hidden">
+    <footer className="v-stack border-t-accent border-2 overflow-hidden bg-background-secondary">
       <div className="container py-16 h-stack justify-between gap-14">
         <div className="v-stack gap-6 basis-5/12">
           <div className="v-stack gap-3">

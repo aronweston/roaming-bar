@@ -63,7 +63,7 @@ export default function FooterNewsletter() {
                 <Input type="email" placeholder="Email" />
 
                 <Button
-                  className="w-1/2 justify-center self-start"
+                  className="w-1/2 justify-center self-start rounded-full p-6 font-semibold"
                   type="submit"
                   isLoading={isSubmitting}>
                   Subscribe

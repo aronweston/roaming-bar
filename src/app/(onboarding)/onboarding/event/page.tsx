@@ -1,19 +1,20 @@
 "use client";
-import OnboardingPage from "@/components/OnboardingPage";
+import OnboardingPage from "@/components/onboarding/OnboardingPage";
 import { EventSchema } from "@/lib/schema";
 import { useOnboarding } from "@/providers/OnboardingProvider";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 
 export default function EventDetails() {
-  const { submitStep } = useOnboarding();
+  const { submitStep, allSteps } = useOnboarding();
 
   const form = useForm<EventSchema>({
     mode: "all",
     resolver: zodResolver(EventSchema),
+    defaultValues: allSteps?.event,
   });
 
-  const onSubmit = form.handleSubmit((values: EventSchema) => submitStep("budget", values));
+  const onSubmit = form.handleSubmit((values: EventSchema) => submitStep("event", values));
 
   return (
     <OnboardingPage>
