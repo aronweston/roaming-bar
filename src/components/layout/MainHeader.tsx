@@ -1,8 +1,8 @@
-import { Routes } from "@/lib/constant";
 import { PhoneIcon } from "lucide-react";
 import MainLink from "../MainLink";
 import mainLogo from "@/assets/images/logo.png";
 import Image from "next/image";
+import { Routes } from "@/lib/cms";
 
 const navigation = [
   {

@@ -1,9 +1,9 @@
-import { Routes } from "@/lib/constant";
 import FooterNewsletter from "./FooterNewsletter";
 import MainLink from "../MainLink";
 import mainLogo from "@/assets/images/logo.png";
 import raisingTheBar from "@/assets/images/raising-the-bar.png";
 import Image from "next/image";
+import { Routes } from "@/lib/cms";
 
 export default function Footer() {
   return (
@@ -11,7 +11,7 @@ export default function Footer() {
       <div className="container py-16 h-stack justify-between gap-14">
         <div className="v-stack gap-6 basis-5/12">
           <div className="v-stack gap-3">
-            <MainLink href={"/"} className="max-w-[250px] p-0 -ml-2">
+            <MainLink href={Routes.HOME} className="max-w-[250px] p-0 -ml-2">
               <Image alt={"main logo"} {...mainLogo} />
             </MainLink>
 

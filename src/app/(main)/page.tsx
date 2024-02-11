@@ -1,20 +1,8 @@
+import actionOneImage from "@/assets/images/action-1.png";
 import MainLink from "@/components/MainLink";
 import Page from "@/components/Page";
-import { Routes } from "@/lib/constant";
+import { Routes } from "@/lib/cms";
 import Image from "next/image";
-import actionOneImage from "@/assets/images/action-1.png";
-import serviceOneImage from "@/assets/images/service-1.png";
-import Autoplay from "embla-carousel-autoplay";
-import { Card, CardContent } from "@/components/ui/card";
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
-} from "@/components/ui/carousel";
-import HomeProductCarousel from "@/components/HomeProductCarousel";
-import { PhoneIcon } from "lucide-react";
 
 export default function Home() {
   return (

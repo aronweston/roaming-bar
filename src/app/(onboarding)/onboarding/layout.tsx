@@ -2,6 +2,7 @@ import "@/assets/styles/globals.css";
 
 import Footer from "@/components/layout/Footer";
 import OnboardingNav from "@/components/layout/OnboardingNav";
+import AgeVerificationModal from "@/components/util/AgeVerificationModal";
 import { cn } from "@/lib/utils";
 import { OnboardingProvider } from "@/providers/OnboardingProvider";
 import type { Metadata } from "next";
@@ -24,6 +25,7 @@ export default function OnboardingLayout({ children }: Readonly<{ children: Reac
         </OnboardingProvider>
         <Footer />
       </body>
+      <AgeVerificationModal />
     </html>
   );
 }
