@@ -14,7 +14,7 @@ export default function OnboardingNav() {
         <Image alt={"main logo"} {...images.mainLogo} />
       </div>
 
-      <nav className="h-stack justify-between flex-grow w-full gap-20">
+      <nav className="h-stack justify-between flex-grow w-full gap-2">
         {steps.map((step) => {
           const isCurrentRoute = currentRoute.route === step.route;
           const isPrevious = isPreviousRoute(step.route);

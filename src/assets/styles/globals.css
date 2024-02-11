@@ -71,3 +71,7 @@
 .onboarding-page {
   height: calc(100vh - theme("spacing.40"));
 }
+
+input[hidden] {
+  display: none !important;
+}

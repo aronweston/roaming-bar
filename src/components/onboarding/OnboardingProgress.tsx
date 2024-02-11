@@ -13,7 +13,7 @@ export function OnboardingProgress() {
       <Sheet>
         {!isFirstPage && (
           <SheetTrigger className="absolute top-6 right-6">
-            <ScrollTextIcon size={32} />
+            <ScrollTextIcon size={32} strokeWidth={1.5} />
           </SheetTrigger>
         )}
 

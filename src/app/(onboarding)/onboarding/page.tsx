@@ -2,7 +2,7 @@
 import OnboardingPage from "@/components/onboarding/OnboardingPage";
 import { Button } from "@/components/ui/button";
 import { Form } from "@/components/ui/form";
-import InputField, { CheckBoxField } from "@/components/util/InputField";
+import { InputField, CheckBoxField } from "@/components/util/fields";
 import { images } from "@/lib/cms";
 import { CustomerSchema } from "@/lib/schema";
 import { useOnboarding } from "@/providers/OnboardingProvider";
@@ -19,7 +19,7 @@ export default function CustomerDetails() {
     defaultValues: allSteps?.customer ?? { accepts_marketing: false },
   });
 
-  const onSubmit = form.handleSubmit((values: CustomerSchema) => submitStep("customer", values));
+  const onSubmit = form.handleSubmit((values: CustomerSchema) => submitStep(values));
 
   return (
     <OnboardingPage className="h-stack gap-20">

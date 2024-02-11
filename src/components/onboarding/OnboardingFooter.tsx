@@ -5,9 +5,8 @@ import { useOnboarding, useRoutes } from "@/providers/OnboardingProvider";
 
 export function OnboardingFooter() {
   const { goBack } = useOnboarding();
-  const { isFirstPage } = useRoutes();
+  const { isFirstPage, currentRoute } = useRoutes();
   if (isFirstPage) return null;
-
   return (
     <div className="h-stack w-full pt-10 justify-end gap-2">
       <Button
@@ -18,7 +17,7 @@ export function OnboardingFooter() {
       </Button>
 
       <Button
-        form="customer"
+        form={currentRoute.step}
         type="submit"
         variant={"accent"}
         className="flex justify-self-end gap-2 font-semibold rounded-full p-6">

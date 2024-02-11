@@ -1,33 +1,34 @@
 "use client";
 import { useLocalStorage } from "@/hooks/useLocalStorage";
-import { BudgetSchema, CustomerSchema, EventSchema, TabSchema } from "@/lib/schema";
-import type { ReactNode } from "react";
-import { createContext, useContext, useState } from "react";
+import { CustomerSchema, EventSchema } from "@/lib/schema";
 import { usePathname, useRouter } from "next/navigation";
+import type { ReactNode } from "react";
+import { createContext, useContext } from "react";
 
 interface AllSteps {
   customer: CustomerSchema;
   event: EventSchema;
-  budget: BudgetSchema;
-  tab: TabSchema;
+  package: any;
+  summary: any;
 }
 
 interface OnboardingContextType {
   goBack: () => void;
   allSteps: AllSteps | null;
-  submitStep: (step: keyof AllSteps, details: AllSteps[keyof AllSteps]) => void;
+  submitStep: (details: AllSteps[keyof AllSteps]) => void;
 }
 
 export const steps = [
-  { title: "Your Details", route: "/onboarding" },
-  { title: "Event Details", route: "/onboarding/event" },
-  { title: "Package", route: "/onboarding/package" },
-  { title: "Summary", route: "/onboarding/summary" },
+  { title: "Your Details", route: "/onboarding", step: "customer" },
+  { title: "Event Details", route: "/onboarding/event", step: "event" },
+  { title: "Package", route: "/onboarding/package", step: "package" },
+  { title: "Summary", route: "/onboarding/summary", step: "summary" },
 ];
 
 export function useRoutes() {
   const pathname = usePathname();
   const currentRouteIndex = steps.findIndex((step) => step.route === pathname);
+
   const currentRoute = steps[currentRouteIndex];
   const isFirstPage = currentRouteIndex === 0;
   const isLastPage = currentRouteIndex === steps.length - 1;
@@ -46,19 +47,15 @@ const OnboardingContext = createContext<OnboardingContextType | undefined>(undef
 
 export function OnboardingProvider({ children }: { children: ReactNode }) {
   const router = useRouter();
-
-  const { nextStep, previousStep } = useRoutes();
-  const [activeStep, setActiveStep] = useLocalStorage("active-step", steps[0]);
+  const { nextStep, previousStep, currentRoute } = useRoutes();
   const [allSteps, setAllSteps] = useLocalStorage<AllSteps | null>("steps", null);
 
   const goBack = () => {
-    setActiveStep(previousStep);
     return router.push(previousStep.route);
   };
 
-  const submitStep = (step: keyof AllSteps, details: AllSteps[keyof AllSteps]) => {
-    setAllSteps((prev) => ({ ...prev, [step]: details }));
-    setActiveStep(nextStep);
+  const submitStep = (details: AllSteps[keyof AllSteps]) => {
+    setAllSteps((prev) => ({ ...prev, [currentRoute.step]: details }));
     return router.push(nextStep.route);
   };
 
