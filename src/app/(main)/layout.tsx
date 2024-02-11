@@ -1,8 +1,10 @@
-import type { Metadata } from "next";
 import "@/assets/styles/globals.css";
-import { Inter } from "next/font/google";
+import Footer from "@/components/layout/Footer";
+import MainNav from "@/components/layout/MainHeader";
+
 import { cn } from "@/lib/utils";
-import MainLogo from "@/assets/icons/main-logo.svg";
+import type { Metadata } from "next";
+import { Inter } from "next/font/google";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -19,20 +21,11 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body className={cn("min-h-screen bg-background font-sans antialiased", inter.variable)}>
-        <header className="sticky top-0">
-          <div className="container h-stack justify-between items-center p-6">
-            <nav>Links</nav>
-            <div className="w-1/2">
-              <MainLogo />
-            </div>
-
-            <div>ctas go here</div>
-          </div>
-        </header>
+        <MainNav />
 
         {children}
 
-        <footer></footer>
+        <Footer />
       </body>
     </html>
   );

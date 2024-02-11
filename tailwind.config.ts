@@ -20,7 +20,7 @@ const config = {
     extend: {
       colors: {
         border: "hsl(var(--border))",
-        input: "hsl(var(--input))",
+        input: "var(--input)",
         ring: "hsl(var(--ring))",
         background: "var(--background)",
         foreground: "var(--foreground)",
@@ -34,16 +34,16 @@ const config = {
           foreground: "var(--secondary-foreground)",
         },
         destructive: {
-          DEFAULT: "hsl(var(--destructive))",
-          foreground: "hsl(var(--destructive-foreground))",
+          DEFAULT: "var(--destructive)",
+          foreground: "var(--destructive-foreground)",
         },
         success: {
           DEFAULT: "var(--success)",
           foreground: "var(--success-foreground)",
         },
         muted: {
-          DEFAULT: "hsl(var(--muted))",
-          foreground: "hsl(var(--muted-foreground))",
+          DEFAULT: "var(--muted)",
+          foreground: "var(--muted-foreground)",
         },
         accent: {
           DEFAULT: "var(--accent)",
@@ -76,6 +76,8 @@ const config = {
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
+        "spin-slow": "spin 3s linear infinite",
+        "spin-v-slow": "spin 8s linear infinite",
       },
     },
   },

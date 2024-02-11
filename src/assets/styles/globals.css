@@ -14,8 +14,8 @@
     --secondary: #1a412e;
     --secondary-foreground: #f3eee2;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    --muted: rgba(28, 28, 28, 0.3);
+    --muted-foreground: rgba(28, 28, 28, 0.6);
 
     --accent: #d6cd72;
     --accent-foreground: #2f2427;
@@ -26,14 +26,14 @@
     --popover: 0 0% 100%;
     --popover-foreground: 222.2 84% 4.9%;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive: #fed7d7;
+    --destructive-foreground: #c53030;
 
     --success: #1b5e20;
     --success-foreground: #f3eee2;
 
     --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
+    --input: #2f2427;
     --ring: 222.2 84% 4.9%;
 
     --radius: 0.5rem;
@@ -49,14 +49,18 @@
   }
 
   .h-stack {
-    @apply flex flex-row gap-2 w-full h-full;
+    @apply flex flex-row gap-2;
   }
 
   .v-stack {
-    @apply flex flex-col gap-2 w-full h-full;
+    @apply flex flex-col gap-2;
   }
 
   .v-stack-reverse {
     @apply flex flex-col-reverse gap-2;
   }
+}
+
+.onboarding-page {
+  height: calc(100vh - theme("spacing.40"));
 }
